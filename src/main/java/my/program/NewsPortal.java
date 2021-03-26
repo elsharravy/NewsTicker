@@ -1,0 +1,131 @@
+package my.program;
+
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlElement;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
+import sample.Control;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class NewsPortal {
+
+    static public final String[] NEWS_PORTALS = {"Onet" , "HowToGeek", "BullDogJob", "HackerNews", "TheCrazyProgrammer", "BetterProgramming", "Hackr"};
+
+    static final String ONET_URL = "https://www.onet.pl/";
+    static final String HOWTOGEEK_URL = "https://www.howtogeek.com/";
+    static final String BULLDOGJOB_URL = "https://bulldogjob.pl/blog";
+    static final String HACKERNEWS_URL = "https://news.ycombinator.com/";
+    static final String THECRAZYPROGRAMMER_URL = "https://www.thecrazyprogrammer.com/";
+    static final String BETTERPROGRAMMING_URL = "https://medium.com/better-programming";
+    static final String HACKR_URL = "https://hackr.io/blog";
+
+    static final String INVALID_NEWS_PORTAL_NAME_MESSAGE = "Invalid Portal Name: ";
+
+    protected final int maxNews;
+    protected WebClient client = new WebClient();
+    protected HtmlPage page;
+    protected String url;
+    protected ArrayList<News> news;
+
+    static public NewsPortal FactoryMethod(String typeName)
+    {
+        if(typeName.equalsIgnoreCase( NEWS_PORTALS[0] ))  { return new Onet( ONET_URL ); }
+        if(typeName.equalsIgnoreCase( NEWS_PORTALS[1]))  { return new HowToGeek( HOWTOGEEK_URL ); }
+        if(typeName.equalsIgnoreCase( NEWS_PORTALS[2]))  { return new BullDogJob( BULLDOGJOB_URL ); }
+        if(typeName.equalsIgnoreCase( NEWS_PORTALS[3]))  { return new HackerNews( HACKERNEWS_URL ); }
+        if(typeName.equalsIgnoreCase( NEWS_PORTALS[4]))  { return new TheCrazyProgrammer( THECRAZYPROGRAMMER_URL ); }
+        if(typeName.equalsIgnoreCase( NEWS_PORTALS[5]))  { return new BetterProgramming( BETTERPROGRAMMING_URL ); }
+        if(typeName.equalsIgnoreCase( NEWS_PORTALS[6]))  { return new Hackr( HACKR_URL ); }
+        else { throw new InvalidNewsPortalNameException( INVALID_NEWS_PORTAL_NAME_MESSAGE + typeName ); }
+    }
+
+    protected NewsPortal(String url , int maxNews) {
+        this.url = url;
+        this.maxNews = maxNews;
+        client.getOptions().setCssEnabled(false);
+        client.getOptions().setJavaScriptEnabled(false);
+        /////////////
+        System.out.println("NewsPortal Constructor: "+url+" ; MaxNews: "+maxNews);
+    }
+    public void displayNews()
+    {
+        System.out.println("News from portal: " + url);
+        for( News news : news)
+        {
+            System.out.println(news);
+        }
+        System.out.println();
+    }
+
+    public ArrayList<News> getNews() {
+        return news;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    protected void initializeWebPage( String url)
+    {
+        try {
+            page = client.getPage(url);
+        }
+        catch ( Exception e)
+        {
+            System.out.println("Error while loading page: " + url);
+            Platform.runLater(
+                    new Runnable() {
+                        @Override
+                        public void run() {
+                            Control.ShowErrorDialog( Alert.AlertType.ERROR, "Internet Connection Problem" , "Error while loading page: " + url );
+                            Control.ApplicationExit(-1);
+                        }
+                    }
+
+            );
+
+        }
+    }
+
+    protected List<HtmlElement> getNewsList(String xPath )
+    {
+        return page.getByXPath(xPath);
+    }
+
+    protected void addNews( List<HtmlElement> elements )
+    {
+        int newsNumber = Integer.min( maxNews , elements.size() );
+        news = new ArrayList<News>( newsNumber );
+        /////////////
+        System.out.println( "Number of newses: " + newsNumber );
+        /////////////
+        for( int i = 0 ; i < newsNumber ; ++i )
+        {
+            try{
+                news.add( retrieveNews(elements.get(i)) );
+            }
+        catch (NullPointerException e)
+        {
+            System.out.println("News is null in: "+url);
+        }
+        }
+    }
+
+
+    protected abstract void initializeNews();
+    protected abstract News retrieveNews( HtmlElement element );
+
+
+    static class InvalidNewsPortalNameException extends IllegalArgumentException
+    {
+        InvalidNewsPortalNameException(String msg)
+        {
+            super(msg);
+        }
+    }
+
+}
+

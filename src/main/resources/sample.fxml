@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:id="gridPane" alignment="CENTER" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+
+  <children>
+    <Button fx:id="leftButton" minHeight="25.0" minWidth="50.0" mnemonicParsing="false" onAction="#leftButtonClicked" prefHeight="25.0" prefWidth="50.0" text="&lt;" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="2.0" right="2.0" />
+         </GridPane.margin></Button>
+    <Button fx:id="rightButton" minHeight="25.0" minWidth="50.0" mnemonicParsing="false" onAction="#rightButtonClicked" prefHeight="25.0" prefWidth="50.0" text="&gt;" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="2.0" right="2.0" />
+         </GridPane.margin></Button>
+    <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#titleLabelClicked" text="News Description" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Button fx:id="exitButton" maxWidth="38.0" minWidth="30.0" mnemonicParsing="false" onAction="#exitButtonClicked" text="Exit" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets right="2.0" top="2.0" />
+         </GridPane.margin></Button>
+      <Label fx:id="portalNameLabel" alignment="CENTER" contentDisplay="CENTER" text="Portal Name" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="optionsButton" minWidth="60.0" mnemonicParsing="false" onAction="#optionsButtonClicked" text="Options" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets left="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <Button fx:id="rightPortalButton" maxWidth="50.0" minWidth="25.0" mnemonicParsing="false" onAction="#rightPortalButtonClicked" prefWidth="50.0" text="&gt;" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="2.0" right="2.0" />
+         </GridPane.margin></Button>
+      <Button fx:id="leftPortalButton" maxWidth="50.0" minWidth="25.0" mnemonicParsing="false" onAction="#leftPortalButtonClicked" prefWidth="50.0" text="&lt;" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="2.0" right="2.0" />
+         </GridPane.margin>
+      </Button>
+      <ProgressIndicator fx:id="newsLoadingIndicator" maxWidth="25.0" minWidth="20.0" progress="0.0" GridPane.columnIndex="4">
+         <GridPane.margin>
+            <Insets left="2.0" top="2.0" />
+         </GridPane.margin>
+      </ProgressIndicator>
+  </children>
+   <columnConstraints>
+      <ColumnConstraints maxWidth="75.0" minWidth="60.0" prefWidth="75.0" />
+      <ColumnConstraints maxWidth="50.0" minWidth="25.0" prefWidth="50.0" />
+      <ColumnConstraints />
+      <ColumnConstraints maxWidth="50.0" minWidth="25.0" prefWidth="50.0" />
+      <ColumnConstraints maxWidth="75.0" minWidth="60.0" prefWidth="75.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

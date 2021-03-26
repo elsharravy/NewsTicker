@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+
+  dependencies{
+  // https://mvnrepository.com/artifact/net.sourceforge.htmlunit/htmlunit
+  compile group: 'net.sourceforge.htmlunit', name: 'htmlunit', version: '2.43.0'
+}
+
+</project>
