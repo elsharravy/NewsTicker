@@ -33,8 +33,8 @@ public class MainWindow {
     {
         this.optionsWindow = optionsWindow;
         this.stage = stage;
-    initializeWindow( cf , newsTicker);
-    initializeStage();
+        initializeWindow( cf , newsTicker);
+        initializeStage();
     }
 
     private void initializeStage( )
@@ -53,6 +53,7 @@ public class MainWindow {
          root = loader.load();
          controller = loader.getController();
          scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
+         scene.getStylesheets().add("style.css");
         //scene.setFill(Color.TRANSPARENT);
         controller.setOptionsWindow(optionsWindow);
         controller.setCf(cf);

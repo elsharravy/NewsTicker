@@ -10,6 +10,10 @@ import sample.Control;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Base class for portals from which you want to read news
+ */
+
 public abstract class NewsPortal {
 
     static public final String[] NEWS_PORTALS = {"Onet" , "HowToGeek", "BullDogJob", "HackerNews", "TheCrazyProgrammer", "BetterProgramming", "Hackr"};

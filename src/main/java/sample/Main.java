@@ -29,8 +29,6 @@ public class Main extends Application {
         optionsWindow.getController().setMainWindow( mainWindow );
 
         newsTicker.initializeNewsTicker(mainWindow.getController() , cf);
-
-
    }
 
 

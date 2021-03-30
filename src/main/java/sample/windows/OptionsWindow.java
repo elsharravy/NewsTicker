@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import sample.ConfigurationFile;
 import sample.NewsTicker;
 
@@ -35,6 +36,7 @@ public class OptionsWindow {
         stage.setX(0);
         stage.setY(0);
         stage.setResizable(false);
+        stage.initStyle(StageStyle.UNDECORATED);
         //    primaryStage.initStyle(StageStyle.TRANSPARENT);
         //    primaryStage.show();
     }
@@ -49,6 +51,7 @@ public class OptionsWindow {
         controller.setOptionsWindow(this);
         controller.setTicker( newsTicker );
         scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
+        scene.getStylesheets().add("style.css");
         stage = new Stage( );
     }
 
