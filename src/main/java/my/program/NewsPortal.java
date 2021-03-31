@@ -5,6 +5,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
+import my.program.portals.GeeksForGeeks;
 import sample.Control;
 
 import java.util.ArrayList;
@@ -16,10 +17,10 @@ import java.util.List;
 
 public abstract class NewsPortal {
 
-    static public final String[] NEWS_PORTALS = {"Onet" , "HowToGeek", "BullDogJob", "HackerNews", "TheCrazyProgrammer", "BetterProgramming", "Hackr"};
+    static public final String[] NEWS_PORTALS = {"Onet" , "HowToGeek", "BullDogJob", "HackerNews", "TheCrazyProgrammer", "BetterProgramming", "Hackr" , "GeeksForGeeks"};
 
     static public final String[] PORTAL_LINKS = {"https://www.onet.pl/" , "https://www.howtogeek.com/", "https://bulldogjob.pl/blog","https://news.ycombinator.com/","https://www.thecrazyprogrammer.com/"
-    ,"https://medium.com/better-programming","https://hackr.io/blog" };
+    ,"https://medium.com/better-programming","https://hackr.io/blog" , "https://www.geeksforgeeks.org/" };
 
 
 
@@ -40,6 +41,7 @@ public abstract class NewsPortal {
         if(typeName.equalsIgnoreCase( NEWS_PORTALS[4]))  { return new TheCrazyProgrammer( PORTAL_LINKS[4] ); }
         if(typeName.equalsIgnoreCase( NEWS_PORTALS[5]))  { return new BetterProgramming( PORTAL_LINKS[5] ); }
         if(typeName.equalsIgnoreCase( NEWS_PORTALS[6]))  { return new Hackr( PORTAL_LINKS[6] ); }
+        if(typeName.equalsIgnoreCase( NEWS_PORTALS[7]))  { return new GeeksForGeeks( PORTAL_LINKS[7] ); }
         else { throw new InvalidNewsPortalNameException( INVALID_NEWS_PORTAL_NAME_MESSAGE + typeName ); }
     }
 
