@@ -48,6 +48,7 @@ public class OptionsWindow {
         controller = loader.getController( );
         controller.setCf(cf);
         controller.initializeFields( cf );
+        controller.intializeGridPane();
         controller.setOptionsWindow(this);
         controller.setTicker( newsTicker );
         scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);

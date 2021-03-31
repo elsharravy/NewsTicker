@@ -7,18 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/my/program/NewsPortal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/program/NewsPortal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/windows/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/windows/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/windows/OptionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/windows/OptionsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/windows/OptionsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/windows/OptionsWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/options.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/options.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/my/program/NewsPortal$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/my/program/NewsPortal$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/my/program/NewsPortal$InvalidNewsPortalNameException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/my/program/NewsPortal$InvalidNewsPortalNameException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/my/program/NewsPortal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/my/program/NewsPortal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/options.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/options.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/windows/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/windows/MainWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample/windows/OptionsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/windows/OptionsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sample/windows/OptionsWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/windows/OptionsWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/windows/buttonAcceleratorRunnable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/windows/buttonAcceleratorRunnable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

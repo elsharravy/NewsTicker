@@ -36,7 +36,7 @@ ToggleButton{
 .scroll-pane{
 -fx-background-color: #363636;
 -fx-fit-to-width: true;
--fx-fit-to-height: true;
+
 }
 
 .text-field:focused{

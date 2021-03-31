@@ -18,13 +18,10 @@ public abstract class NewsPortal {
 
     static public final String[] NEWS_PORTALS = {"Onet" , "HowToGeek", "BullDogJob", "HackerNews", "TheCrazyProgrammer", "BetterProgramming", "Hackr"};
 
-    static final String ONET_URL = "https://www.onet.pl/";
-    static final String HOWTOGEEK_URL = "https://www.howtogeek.com/";
-    static final String BULLDOGJOB_URL = "https://bulldogjob.pl/blog";
-    static final String HACKERNEWS_URL = "https://news.ycombinator.com/";
-    static final String THECRAZYPROGRAMMER_URL = "https://www.thecrazyprogrammer.com/";
-    static final String BETTERPROGRAMMING_URL = "https://medium.com/better-programming";
-    static final String HACKR_URL = "https://hackr.io/blog";
+    static public final String[] PORTAL_LINKS = {"https://www.onet.pl/" , "https://www.howtogeek.com/", "https://bulldogjob.pl/blog","https://news.ycombinator.com/","https://www.thecrazyprogrammer.com/"
+    ,"https://medium.com/better-programming","https://hackr.io/blog" };
+
+
 
     static final String INVALID_NEWS_PORTAL_NAME_MESSAGE = "Invalid Portal Name: ";
 
@@ -36,13 +33,13 @@ public abstract class NewsPortal {
 
     static public NewsPortal FactoryMethod(String typeName)
     {
-        if(typeName.equalsIgnoreCase( NEWS_PORTALS[0] ))  { return new Onet( ONET_URL ); }
-        if(typeName.equalsIgnoreCase( NEWS_PORTALS[1]))  { return new HowToGeek( HOWTOGEEK_URL ); }
-        if(typeName.equalsIgnoreCase( NEWS_PORTALS[2]))  { return new BullDogJob( BULLDOGJOB_URL ); }
-        if(typeName.equalsIgnoreCase( NEWS_PORTALS[3]))  { return new HackerNews( HACKERNEWS_URL ); }
-        if(typeName.equalsIgnoreCase( NEWS_PORTALS[4]))  { return new TheCrazyProgrammer( THECRAZYPROGRAMMER_URL ); }
-        if(typeName.equalsIgnoreCase( NEWS_PORTALS[5]))  { return new BetterProgramming( BETTERPROGRAMMING_URL ); }
-        if(typeName.equalsIgnoreCase( NEWS_PORTALS[6]))  { return new Hackr( HACKR_URL ); }
+        if(typeName.equalsIgnoreCase( NEWS_PORTALS[0] ))  { return new Onet( PORTAL_LINKS[0] ); }
+        if(typeName.equalsIgnoreCase( NEWS_PORTALS[1]))  { return new HowToGeek( PORTAL_LINKS[1] ); }
+        if(typeName.equalsIgnoreCase( NEWS_PORTALS[2]))  { return new BullDogJob( PORTAL_LINKS[2] ); }
+        if(typeName.equalsIgnoreCase( NEWS_PORTALS[3]))  { return new HackerNews( PORTAL_LINKS[3] ); }
+        if(typeName.equalsIgnoreCase( NEWS_PORTALS[4]))  { return new TheCrazyProgrammer( PORTAL_LINKS[4] ); }
+        if(typeName.equalsIgnoreCase( NEWS_PORTALS[5]))  { return new BetterProgramming( PORTAL_LINKS[5] ); }
+        if(typeName.equalsIgnoreCase( NEWS_PORTALS[6]))  { return new Hackr( PORTAL_LINKS[6] ); }
         else { throw new InvalidNewsPortalNameException( INVALID_NEWS_PORTAL_NAME_MESSAGE + typeName ); }
     }
 

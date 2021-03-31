@@ -2,9 +2,11 @@ package sample.windows;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import my.program.NewsPortal;
 import sample.ConfigurationFile;
 import sample.NewsTicker;
@@ -18,6 +20,7 @@ public class OptionsController  {
     final static String TOGGLE_BUTTON_NOT_SELECTED = "DON`T SHOW";
 
    ToggleButton[] toggleButtons = new ToggleButton[ NewsPortal.NEWS_PORTALS.length ] ;
+   Label[] newsPortalsLabels = new Label[ NewsPortal.NEWS_PORTALS.length ] ;
 
 NewsTicker ticker;
 ConfigurationFile cf;
@@ -28,11 +31,13 @@ MainWindow mainWindow;
  TextField intervalTextField;
 
     @FXML
+    GridPane gridPane;
+
+    @FXML
     Button saveButton;
 
     @FXML
     ToggleButton onetToggle, howToGeekToggle, bullDogJobToggle, hackerNewsToggle, theCrazyProgrammerToggle, betterProgrammingToggle, hackrToggle;
-
 
     @FXML
     private void initialize()
@@ -58,17 +63,42 @@ MainWindow mainWindow;
     {
         initializeInterval(cf);
         initializeButtons(cf);
+        initializeNewsPortalsLabels();
+    }
+
+    public void intializeGridPane()
+    {
+        gridPane.setVgap( 5 );
+    }
+
+    private void initializeNewsPortalsLabels()
+    {
+        for(int i = 0 ; i < NewsPortal.NEWS_PORTALS.length ; ++i)
+        {
+            newsPortalsLabels[i] = new Label( NewsPortal.NEWS_PORTALS[i]);
+            gridPane.add( newsPortalsLabels[i] , 0 ,  i + 2 );
+        }
+
     }
 
     private void initializeArrayOfToggleButtons()
     {
-       toggleButtons[0] = onetToggle;
+        for(int i = 0 ; i < NewsPortal.NEWS_PORTALS.length ; ++i)
+        {
+            toggleButtons[i] = new ToggleButton( );
+            toggleButtons[i].setOnMouseClicked( this::toggled );
+            gridPane.add(toggleButtons[i] , 1 , 2+i);
+
+        }
+
+
+/*       toggleButtons[0] = onetToggle;
        toggleButtons[1] = howToGeekToggle;
        toggleButtons[2] = bullDogJobToggle;
        toggleButtons[3] = hackerNewsToggle;
        toggleButtons[4] = theCrazyProgrammerToggle;
        toggleButtons[5] = betterProgrammingToggle;
-       toggleButtons[6] = hackrToggle;
+       toggleButtons[6] = hackrToggle;*/
     }
 
     private void initializeInterval(ConfigurationFile cf)

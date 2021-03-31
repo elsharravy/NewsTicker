@@ -9,21 +9,14 @@
       <Button fx:id="saveButton" layoutX="194.0" layoutY="324.0" mnemonicParsing="false" onMouseClicked="#onSaveButtonClicked" prefHeight="25.0" text="Save" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0" />
       <ScrollPane AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
          <content>
-            <GridPane alignment="CENTER">
+            <GridPane fx:id="gridPane" alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="137.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="92.0" />
               </columnConstraints>
               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="26.0" minHeight="10.0" prefHeight="16.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="133.0" text="News Switch Intervals [s]" textAlignment="CENTER">
@@ -33,46 +26,7 @@
                   <TextField fx:id="intervalTextField" alignment="CENTER" promptText="seconds" GridPane.columnIndex="1" />
                   <Separator prefWidth="200.0" GridPane.rowIndex="1" />
                   <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label text="Onet" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets left="2.0" />
-                     </GridPane.margin></Label>
-                  <Label text="How To Geek" GridPane.rowIndex="3">
-                     <GridPane.margin>
-                        <Insets left="2.0" />
-                     </GridPane.margin></Label>
-                  <ToggleButton fx:id="onetToggle" mnemonicParsing="false" onMouseClicked="#toggled" text="ToogleButton" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <ToggleButton fx:id="howToGeekToggle" mnemonicParsing="false" onMouseClicked="#toggled" text="ToggleButton" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <Label text="BullDogJob" GridPane.rowIndex="4">
-                     <GridPane.margin>
-                        <Insets left="2.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <ToggleButton fx:id="bullDogJobToggle" mnemonicParsing="false" onMouseClicked="#toggled" text="ToggleButton" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-                  <Label text="Hacker News" GridPane.rowIndex="5">
-                     <GridPane.margin>
-                        <Insets left="2.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <ToggleButton fx:id="hackerNewsToggle" mnemonicParsing="false" onMouseClicked="#toggled" text="ToggleButton" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-                  <ToggleButton fx:id="theCrazyProgrammerToggle" mnemonicParsing="false" onMouseClicked="#toggled" text="ToggleButton" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
-                  <ToggleButton fx:id="betterProgrammingToggle" mnemonicParsing="false" onMouseClicked="#toggled" text="ToggleButton" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
-                  <ToggleButton fx:id="hackrToggle" mnemonicParsing="false" onMouseClicked="#toggled" text="ToggleButton" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
-                  <Label text="The Crazy Programmer" GridPane.rowIndex="6">
-                     <GridPane.margin>
-                        <Insets left="2.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Label text="Better Programming" GridPane.rowIndex="7">
-                     <GridPane.margin>
-                        <Insets left="2.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Label text="Hackr" GridPane.rowIndex="8">
-                     <GridPane.margin>
-                        <Insets left="2.0" />
-                     </GridPane.margin>
-                  </Label>
+
                </children>
             </GridPane>
          </content>
