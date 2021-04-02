@@ -39,4 +39,6 @@ public class Main extends Application {
 
 }
 
-
+// 1. Proper dialogs in case of error
+// 2. Auto ticker stop
+// 3. Show keyboard shortcuts

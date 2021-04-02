@@ -89,7 +89,7 @@ try {
         }
         catch (NullPointerException e)
         {
-            System.out.println("There is no portals, probably they are loading");
+            System.out.println("There are no portals, probably they are loading");
         }
     }
 
@@ -102,7 +102,7 @@ try {
         }
         catch (NullPointerException e)
         {
-            System.out.println("There is no portals, probably they are loading");
+            System.out.println("There are no portals, probably they are loading");
         }
     }
 
@@ -186,9 +186,18 @@ try {
     void optionsButtonClicked( ActionEvent event )
     {
         Stage optionsStage = optionsWindow.getStage();
-        optionsStage.setX(0);
-        optionsStage.setY(MainWindow.WINDOW_HEIGHT);
-        optionsStage.show();
+
+        if( optionsStage.isShowing() )
+        {
+            optionsStage.hide();
+        }
+        else
+        {
+            optionsStage.setX(0);
+            optionsStage.setY(MainWindow.WINDOW_HEIGHT);
+            optionsStage.show();
+        }
+
     }
 
     public void setOptionsWindow(OptionsWindow optionsWindow) {

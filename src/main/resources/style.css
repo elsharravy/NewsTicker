@@ -48,3 +48,7 @@ ToggleButton{
     -fx-border-color: #000000;
     -fx-border-width: 0.5;
 }
+
+.scroll-bar:vertical{
+ -fx-background-color: #000000; 
+}
